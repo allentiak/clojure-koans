@@ -18,7 +18,7 @@
   (= __
      (group-by :id [{:id 1 :name "Bob"}
                     {:id 2 :name "Jennifer"}
-                    {:id 1 :last-name "Smith"} ]))
+                    {:id 1 :last-name "Smith"}]))
 
   "But be careful when you group by a non-required key"
   (= {"Bob" [{:name "Bob" :id 1}]

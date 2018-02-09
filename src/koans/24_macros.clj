@@ -10,7 +10,7 @@
 (defmacro infix-better [form]
   `(~(second form) ; Note the syntax-quote (`) and unquote (~) characters!
     __
-    __ ))
+    __))
 
 (defmacro r-infix [form]
   (cond (not (seq? form))
