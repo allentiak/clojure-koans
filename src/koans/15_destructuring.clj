@@ -18,11 +18,11 @@
      ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
       ["apples" "oranges" "pears"]))
 
-  "Or in let expressions"
-  (= "Rich Hickey aka The Clojurer aka Go Time aka Lambda Guru"
-     (let [[first-name last-name & aliases]
-           (list "Rich" "Hickey" "The Clojurer" "Go Time" "Lambda Guru")]
-       __))
+ "Or in let expressions"
+ (= "Rich Hickey aka The Clojurer aka Go Time aka Lambda Guru"
+    (let [[first-name last-name & aliases]
+          (list "Rich" "Hickey" "The Clojurer" "Go Time" "Lambda Guru")]
+      (apply str (interpose " aka " (cons (str first-name " " last-name) aliases)))))
 
   "You can regain the full argument if you like arguing"
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
