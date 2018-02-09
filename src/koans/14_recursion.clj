@@ -21,7 +21,12 @@
       (recur (rest col) (cons (first col) accum)))))
 
 (defn factorial [n]
-  __)
+  (loop [current n
+         acc 1]
+    (cond
+      (= current 0) acc
+      (= current 1) acc
+      :else (recur (dec current) (* current acc)))))
 
 (meditations
   "Recursion ends with a base case"
