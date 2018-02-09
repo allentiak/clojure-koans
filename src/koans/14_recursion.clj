@@ -10,11 +10,15 @@
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
+      acc
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [col coll
+         accum '()]
+    (if (zero? (count col))
+      accum
+      (recur (rest col) (cons (first col) accum)))))
 
 (defn factorial [n]
   __)
