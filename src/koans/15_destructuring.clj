@@ -7,15 +7,15 @@
    :state "TX"})
 
 (meditations
-  "Destructuring is an arbiter: it breaks up arguments"
-  (= __ ((fn [[a b]] (str b a))
-         [:foo :bar]))
+ "Destructuring is an arbiter: it breaks up arguments"
+ (= ":bar:foo" ((fn [[a b]] (str b a))
+                [:foo :bar]))
 
   "Whether in function definitions"
   (= (str "An Oxford comma list of apples, "
           "oranges, "
           "and pears.")
-     ((fn [[a b c]] __)
+     ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
       ["apples" "oranges" "pears"]))
 
   "Or in let expressions"
