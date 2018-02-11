@@ -13,16 +13,16 @@
 
  "You can be the change you wish to see in the world."
  (= "better" (do
-         (dosync (ref-set the-world "better"))
-         @the-world))
+               (dosync (ref-set the-world "better"))
+               @the-world))
 
  "Alter where you need not replace"
  (= "better!!!" (let [exclamator (fn [x] (str x "!"))]
-         (dosync
-          (alter the-world exclamator)
-          (alter the-world exclamator)
-          (alter the-world exclamator))
-         @the-world))
+                  (dosync
+                   (alter the-world exclamator)
+                   (alter the-world exclamator)
+                   (alter the-world exclamator))
+                  @the-world))
 
  "Don't forget to do your work in a transaction!"
  (= 0 (do __
