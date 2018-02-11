@@ -40,4 +40,4 @@
        (ref-set the-world {})
        (alter the-world assoc :jerry "Real Jerry")
        (alter bizarro-world assoc :jerry "Bizarro Jerry")
-       __))))
+       (vector (:jerry @the-world) (:jerry @bizarro-world))))))
