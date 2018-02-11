@@ -23,11 +23,11 @@
           @atomic-clock))
 
   "Atomic atoms are atomic"
-  (= __ (do
+  (= 20 (do
           (compare-and-set! atomic-clock 100 :fin)
           @atomic-clock))
 
   "When your expectations are aligned with reality, things proceed that way"
   (= :fin (do
-            (compare-and-set! __ __ __)
+            (compare-and-set! atomic-clock 20 :fin)
             @atomic-clock)))
