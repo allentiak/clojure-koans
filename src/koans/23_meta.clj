@@ -22,7 +22,7 @@
 
   "Notice when metadata carries over"
   (= {:foo :bar} (meta (merge '^{:foo :bar} {:a 1 :b 2}
-                     {:b 3 :c 4})))
+                        {:b 3 :c 4})))
 
   "And when it doesn't"
   (= nil (meta (merge {:a 1 :b 2}
